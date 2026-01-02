@@ -25,9 +25,9 @@ app.get('/api/notes', (req, res) => {
 
 // POST route to add text to the array.
 app.post('/api/notes', (req, res) => {
-    console.log(req.body);
     notes.push(req.body);
-    res.status(201).json(req.body);
+    res.status(201).send(req.body);
+    console.log(`Status: ${res.statusCode} + Content: ${JSON.stringify(req.body)}`);
 });
 
 // Start the server on a specified port
